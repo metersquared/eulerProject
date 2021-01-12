@@ -1,8 +1,9 @@
 
 num1=3;
 num2=5;
-maxNum=1000000;
+maxNum=10000000;
 
+tic
 %Rough method:
 %Done by checking modulus of each number
 sum1=0;
@@ -12,10 +13,11 @@ for i=1:maxNum-1
     end
 end
 sum1
+toc
 
-
+tic
 %Efficient method:
-%Find largest multiple, then solve the sum with arithmetic series
+%Find largest multiple of each number as well products, then solve the sum with arithmetic series
 product=num1*num2;
 counter=maxNum-1;
 %Find maximum multiple of all products
@@ -25,3 +27,4 @@ maxDivProd=maxNum-mod(maxNum,product);
 %Arithmetic sum of all results
 sum2=(maxDivNum1+num1)*maxDivNum1/num1/2+(maxDivNum2+num2)*maxDivNum2/num2/2-(maxDivProd+product)*maxDivProd/product/2;
 sum2
+toc
